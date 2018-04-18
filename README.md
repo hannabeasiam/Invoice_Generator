@@ -18,7 +18,7 @@ invoiceheader | invoicedetails
 ------------- | ---------------
 **PK**  invoice_number| **PK** invoice_detail_ID
 customer_name | **FK** invoice_number
-  - | description 
+  - | invoice_description 
   - | quantity
   - | price
 
