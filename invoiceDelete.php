@@ -22,8 +22,7 @@
     $invoice_id = trim(filter_input(INPUT_POST,'invoice_id'));
     $invoice_number = trim(filter_input(INPUT_POST,'invoice_number'));
     $customer_name = trim(filter_input(INPUT_POST,'customer_name'));
-    $query = "UPDATE invoice_header
-              SET invoice_number = '$invoice_number', customer_name = '$customer_name' 
+    $query = "DELETE FROM invoice_header
               WHERE invoice_id = '$invoice_id'";
 
     if (empty($errorMessage)) { 
@@ -38,7 +37,7 @@
     }
   }
   include_once("inc/functions.php");
-  $title = 'Home | Invoice Add)';
+  $title = 'Home | Invoice Delete)';
   include_once("inc/header.php");
 
   if (!empty($errorMessage)) {
@@ -46,13 +45,13 @@
   } else {
 ?>
 <div class="container">
-  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="edit_invoice" method="post">
+  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="delete_invoice" method="post">
     <input type="hidden" name="invoice_id" id="invoice_id" value="<?php echo $result[0]['invoice_id']; ?>" />
     <lable>Invoice Number</label>
     <input type="text" name="invoice_number" id="invoice_number" value="<?php echo $result[0]['invoice_number']; ?>"/><br/>
     <lable>Customer Name</label>
     <input type="text" name="customer_name" id="customer_name" value="<?php echo $result[0]['customer_name']; ?>"/><br/>
-    <input type="submit" value="Edit Invoice">
+    <input type="submit" value="Delete Invoice">
   </form>
 </div>
 <?php 

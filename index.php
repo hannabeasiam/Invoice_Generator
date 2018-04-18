@@ -43,7 +43,7 @@
           echo '<tr>';
           echo '<td>' . $invoices['invoice_number'] . '</td>';
           echo '<td>' . $invoices['customer_name'] . '</td>';
-          echo '<td>' . '<a href="invoiceEdit.php?invoice_number=' . $invoices['invoice_number'] . '">Edit</a> | <a href="invoicedelete.php?invoice_number=' . $invoices['invoice_number'] . '">Delete</a></td>';
+          echo '<td>' . '<a href="invoiceEdit.php?invoice_id=' . $invoices['invoice_id'] . '">Edit</a> | <a href="invoiceDelete.php?invoice_id=' . $invoices['invoice_id'] . '">Delete</a></td>';
           echo '</tr>';
         }
       ?>
