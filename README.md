@@ -19,9 +19,9 @@ invoiceheader | invoicedetails
 **PK**  invoice_id| **PK** invoice_detail_id
 invoice_number | **FK** invoice_number
 customer_name | invoice_description 
-  - | quantity
-  - | price
-  - | item
+  -- | quantity
+  -- | price
+  -- | item
 
 ## App's function
 - prompt form an invoice number

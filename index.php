@@ -1,20 +1,6 @@
 <?php
-  include_once("inc/dbconnect.php");
   include_once("inc/functions.php");
-  
-  $query = 'SELECT * FROM invoice_header ORDER BY invoice_number';
-  // if db connection works, 
-  if (empty($errorMessage)) { 
-    try {
-      $statement = $db->prepare($query);
-      $statement->execute();
-	  	$result = $statement->fetchAll();
-		  $statement->closeCursor();
-    } catch (PDOException $e) {
-      $errorMessage = $e->getMessage();
-      exit;
-    }
-  }
+  $result = get_invoice_header();
   $title = 'Home';
   include_once("inc/header.php");
 ?>
@@ -43,7 +29,8 @@
           echo '<tr>';
           echo '<td>' . $invoices['invoice_number'] . '</td>';
           echo '<td>' . $invoices['customer_name'] . '</td>';
-          echo '<td>' . '<a href="invoiceEdit.php?invoice_id=' . $invoices['invoice_id'] . '">Edit</a> | <a href="invoiceDelete.php?invoice_id=' . $invoices['invoice_id'] . '">Delete</a></td>';
+          // echo '<td>' . '<a href="invoiceEdit.php?invoice_id=' . $invoices['invoice_id'] . '">Edit</a> | <a href="invoiceDelete.php?invoice_id=' . $invoices['invoice_id'] . '">Delete</a></td>';
+          echo '<td>' . '<a href="invoice.php?invoice_id=' . $invoices['invoice_id'] . '">Change</a></td>';          
           echo '</tr>';
         }
       ?>
