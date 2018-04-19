@@ -20,7 +20,7 @@
         <tr>
           <th>Invoice Number</th>
           <th>Customer Name</th>
-          <th><a href="invoiceadd.php">Add Invoices</a></th>
+          <th class="center"><a class="addButton" href="invoiceadd.php">+ INVOICE</a></th>
         </tr>
       </thead>
       <tbody>
@@ -30,7 +30,7 @@
           echo '<td>' . $invoices['invoice_number'] . '</td>';
           echo '<td>' . $invoices['customer_name'] . '</td>';
           // echo '<td>' . '<a href="invoiceEdit.php?invoice_id=' . $invoices['invoice_id'] . '">Edit</a> | <a href="invoiceDelete.php?invoice_id=' . $invoices['invoice_id'] . '">Delete</a></td>';
-          echo '<td>' . '<a href="invoice.php?invoice_id=' . $invoices['invoice_id'] . '">Change</a></td>';          
+          echo '<td class="center">' . '<a class="button" href="invoice.php?invoice_id=' . $invoices['invoice_id'] . '">Customize</a></td>';          
           echo '</tr>';
         }
       ?>
