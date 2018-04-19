@@ -15,12 +15,5 @@ try {
   exit;
 }
 
-function display_db_error($errorMessage) {
-  echo '<aside>';
-  echo '<ul>';
-  echo "<li>$errorMessage</li>";
-  echo '</aside>';
-}
-
 
 
