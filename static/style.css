@@ -94,6 +94,9 @@ h2 {
   color: rgba(68, 218, 101, 0.788);
   margin: 1em 0;
 }
+a {
+  text-decoration: none;
+}
 
 
 .main-footer {
@@ -120,10 +123,22 @@ h2 {
 form {
   margin: 0;
 }
+/* test table guid line
+table, th, td {
+  border: 0.5px;
+  border-style: dotted;
+}*/
 th {
-  text-align: left;
-  margin-right: 2em;
+  margin: 2em;
   padding-right: 2em;
+  padding-bottom: 1em;
+}
+/* centerlize the button under table */
+th.center {
+  padding-right: 0;
+}
+.center {
+  text-align: center;
 }
 td {
   padding-bottom: 0.5em;
@@ -152,6 +167,34 @@ fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
+}
+/*=======================================
+  button styles
+  =====================================*/
+a:hover.button {
+  font-weight:      bold;
+  background-color: rgba(68, 218, 101, 0.788);
+  color: white;
+} 
+
+.button {
+  display: inline-block;
+  border-radius: 5px;
+  padding: .5em;
+  text-decoration: none;
+  background-color:  rgba(191, 203, 206, 0.788);
+  font-weight:      bold;
+  color:  #2e3438;
+}
+
+.addButton {
+  display: inline-block;
+  border-radius: 10em;
+  padding: .5em;
+  text-decoration: none;
+  background-color:  rgba(128, 223, 247, 0.788);
+  font-weight: 700;
+  color:  #135480;
 }
 
 /*=======================================
