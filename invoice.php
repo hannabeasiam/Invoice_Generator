@@ -1,7 +1,6 @@
 <?php
   include("inc/dbconnect.php");
   include("inc/functions.php");
-
 	if ($_SERVER["REQUEST_METHOD"] == "GET") { 
     $request = trim(filter_input(INPUT_GET, 'invoice_id'));
     $query = 'SELECT * FROM invoice_header WHERE invoice_id='.$request;
@@ -85,7 +84,7 @@
           echo '<td>' . $invoices['quantity'] . '</td>';
           echo '<td>' . $invoices['price'] . '</td>';
           echo '<td>' . $invoices['quantity']*$invoices['price'] . '</td>';
-          echo '<td>' . '<a href="itemEdit.php?invoice_id=' . $invoices['invoice_id'] . '">Edit</a> | <a href="itemDelete.php?invoice_id=' . $invoices['invoice_id'] . '">Delete</a></td>';
+          echo '<td>' . '<a href="itemEdit.php?invoice_detail_id=' . $invoices['invoice_detail_id'] . '">Edit</a> | <a href="itemDelete.php?invoice_detail_id=' . $invoices['invoice_detail_id'] . '">Delete</a></td>';
           echo '</tr>';
         }
       ?>
