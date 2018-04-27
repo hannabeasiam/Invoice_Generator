@@ -2,7 +2,7 @@
 $servername = 'localhost';
 $dbname = 'invoices';
 $username = 'root';
-$password = 'Patryse3698'; // delete this later
+$password = ''; // delete this later
 $dsn = "mysql:host=$servername;dbname=$dbname";
 
 try { 

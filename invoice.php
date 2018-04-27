@@ -5,11 +5,15 @@
 
   if ($_SERVER["REQUEST_METHOD"] == "GET") { 
     $request = trim(filter_input(INPUT_GET, 'invoice_id'));
-    $query = 'SELECT * FROM invoice_header WHERE invoice_id='.$request;
+    $query = "SELECT * FROM invoice_header WHERE invoice_id=$request;";
+    echo($query);
     // if db connection works, 
-    if (empty($errorMessage)) { 
-      $result = get_invoice_header();  // fetch data
-    }
+
+    $result = display_invoice_header("$query");  // fetch data
+    echo'<pre>';
+    print_r($result);
+    echo'</pre>';
+    
   }
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /*********
@@ -41,11 +45,11 @@
 ?>
 <div class="container">
   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" name="invoice" method="post">
-    <input type="hidden" name="invoice_id" id="invoice_id" value="<?php echo $result[0]['invoice_id']; ?>" />
+    <input type="hidden" name="invoice_id" id="invoice_id" value="<?php echo $result['invoice_id']; ?>" />
     <lable>Invoice Number</label>
-    <input type="text" name="invoice_number" id="invoice_number" value="<?php echo $result[0]['invoice_number']; ?>"/><br/>
+    <input type="text" name="invoice_number" id="invoice_number" value="<?php echo $result['invoice_number']; ?>"/><br/>
     <lable>Customer Name</label>
-    <input type="text" name="customer_name" id="customer_name" value="<?php echo $result[0]['customer_name']; ?>"/><br/>
+    <input type="text" name="customer_name" id="customer_name" value="<?php echo $result['customer_name']; ?>"/><br/>
     <input type="submit" name="edit" value="Save Change">
     <input type="submit" name="delete" value="delete">
   </form>

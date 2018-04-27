@@ -18,6 +18,24 @@ function get_invoice_header() {
   return $result;
 }
 
+function display_invoice_header($query) {
+  include_once("dbconnect.php");
+  // if db connection works, return invoice header store under invoice
+  if (empty($errorMessage)) { 
+    try {
+      $statement = $db->prepare($query);
+      $statement->execute();
+	  	$result = $statement->fetch();
+		  $statement->closeCursor();
+    } catch (PDOException $e) {
+      $errorMessage = $e->getMessage();
+      exit;
+    }
+  }
+  return $result;
+}
+
+
 function change_invoice_header($query) {
   include_once("dbconnect.php");
 
