@@ -2,7 +2,7 @@
 $servername = 'localhost';
 $dbname = 'invoices';
 $username = 'root';
-$password = 'Patryse3698'; // delete this later
+$password = ''; // delete this later
 $dsn = "mysql:host=$servername;dbname=$dbname";
 
 try { 
@@ -13,13 +13,6 @@ try {
   // use exception to handle exeptional case (db not connectable)
   $errorMessage = $e->getMessage();
   exit;
-}
-
-function display_db_error($errorMessage) {
-  echo '<aside>';
-  echo '<ul>';
-  echo "<li>$errorMessage</li>";
-  echo '</aside>';
 }
 
 
